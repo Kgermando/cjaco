@@ -1,0 +1,97 @@
+<!-- Page Banner -->
+<div
+    class="page-banner-area ptb-100"
+    style="background-image: url(assets/images/shapes/page-banner-bg.jpg);"
+>
+    <div class="container">
+        <div class="page-banner-content text-center" *ngIf="event">
+            <div class="list">
+                <div class="list-item d-inline-block position-relative">
+                    <i class="flaticon-calendar"></i>
+                    {{ event.start_date | date: 'dd/MM/yyyy' }}
+                </div>
+                <div class="list-item d-inline-block position-relative">
+                    <i class="flaticon-pin"></i>
+                    {{event.adress}}
+                </div>
+            </div>
+            <h1>{{ event.title }}</h1>
+            <ul class="ps-0 mb-0 list-unstyled">
+                <li class="d-inline-block position-relative"><a routerLink="/">Acceuil</a></li>
+                <li class="d-inline-block position-relative">Details de l'évenement</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- Event Details -->
+<div class="spinner-border" role="status" *ngIf="isLoading">
+    <span class="visually-hidden">Loading...</span>
+</div>
+<div class="event-details ptb-100" *ngIf="!isLoading">
+    <div class="container">
+        <div class="row" *ngIf="event">
+            <div class="col-lg-8 col-md-12">
+                <div class="event-details-desc">
+                    <img [src]="event.image" alt="{{ event.title }}"> 
+                    <div class="mb-3"></div>
+                    <div [innerHTML]="event.content"></div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-12">
+                <div class="event-details-info">
+                    <h3>Infos</h3>
+                    <ul class="info ps-0 mb-0 list-unstyled">
+                        <li class="d-flex align-items-center justify-content-between">
+                            <span>Date de début:</span>
+                            {{ event.start_date | date: 'dd/MM/yyyy' }}
+                        </li>
+                        <li class="d-flex align-items-center justify-content-between">
+                            <span>Date de fin:</span>
+                            {{ event.end_date | date: 'dd/MM/yyyy' }}
+                        </li>
+                        <li class="d-flex align-items-center justify-content-between">
+                            <span>Heure de début:</span>
+                            {{ event.start_date | date: 'HH:mm' }}
+                        </li>
+                        <li class="d-flex align-items-center justify-content-between">
+                            <span>Heure de fin:</span>
+                            {{ event.end_date | date: 'HH:mm' }}
+                        </li>
+                        <li class="d-flex align-items-center justify-content-between">
+                            <span>Adresse:</span>
+                            {{event.adress}}
+                        </li> 
+                    </ul>
+                    <div class="btn-box">
+                        <a routerLink="/soutenir" class="default-btn d-block w-100 text-center">Nous soutenir</a>
+                        <a routerLink="/contact" class="default-btn d-block w-100 text-center two">Nous contacter</a>
+                    </div>
+                    <span class="d-block fw-medium">Share On:</span>
+                    <ul class="social-links ps-0 mb-0 list-unstyled">
+                        <li class="d-inline-block">
+                            <a href="https://www.facebook.com/" target="_blank" class="position-relative d-block rounded-circle text-center">
+                                <i class="bx bxl-facebook"></i>
+                            </a>
+                        </li>
+                        <li class="d-inline-block">
+                            <a href="https://linkedin.com/" target="_blank" class="position-relative d-block rounded-circle text-center">
+                                <i class="bx bxl-linkedin"></i>
+                            </a>
+                        </li>
+                        <li class="d-inline-block">
+                            <a href="https://twitter.com/" target="_blank" class="position-relative d-block rounded-circle text-center">
+                                <i class="bx bxl-twitter"></i>
+                            </a>
+                        </li>
+                        <li class="d-inline-block">
+                            <a href="https://www.instagram.com/" target="_blank" class="position-relative d-block rounded-circle text-center">
+                                <i class='bx bxl-instagram'></i>
+                            </a>
+                        </li>
+                    </ul> 
+                </div> 
+            </div>
+        </div>
+    </div>
+</div>

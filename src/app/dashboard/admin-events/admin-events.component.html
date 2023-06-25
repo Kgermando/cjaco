@@ -1,0 +1,54 @@
+<div class="courses-table">
+    <div class="mb-4 d-flex align-items-center justify-content-between">
+        <span></span>
+        <button class="default-btn two" type="button" routerLink="/admin/events-add">Ajouter evenement</button>
+    </div>
+    <div class="table-responsive">
+        <table class="table align-middle">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th scope="col">Titre</th>
+                    <th scope="col">Date debut</th>
+                    <th scope="col">Date fin</th>
+                    <th scope="col">Signature</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead> 
+             <div class="spinner-border" role="status" *ngIf="isloading">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            <tbody *ngIf="!isloading"> 
+                <tr *ngFor="let item of eventList">
+                    <td>
+                        {{ item.id }}
+                    </td>
+                    <th scope="row">
+                        <a [routerLink]="['/admin', item.id, 'events-edit']">
+                            {{ item.title }}
+                        </a>
+                    </th>
+                    <td>
+                        {{ item.start_date | date: 'dd/MM/yyyy' }}
+                    </td>
+                    <td>
+                        {{ item.end_date | date: 'dd/MM/yyyy' }}
+                    </td>
+                    <td>
+                        {{ item.signature }}
+                    </td>
+                    <td class="action">
+                        <button type="button" (click)="delete(item.id)" class="default-btn">
+                            <i class='bx bx-trash-alt'></i>
+                        </button>
+                    </td>
+                </tr>
+                
+            </tbody>
+        </table>
+    </div> 
+    <app-paginator
+    [lastPage]="lastPage"
+    (pageChanged)="load($event)"
+    ></app-paginator>
+</div>

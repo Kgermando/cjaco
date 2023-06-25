@@ -1,0 +1,35 @@
+
+<div class="row">
+    <h4>Detail de l'évenement</h4>
+</div>
+<form [formGroup]="formGroup" (ngSubmit)="onSubmit()" class="row g-3">
+  <div class="col-12">
+    <label for="title" class="form-label">Titre</label>
+    <input type="text" class="form-control" formControlName="title" id="title" placeholder="Titre du l'evenement">
+  </div>
+  <div class="col-md-6"> 
+    <label for="start_date" class="form-label">Date de debut</label>
+    <input type="text" formControlName="start_date" class="form-control" id="start_date" placeholder="2023-06-19 15:15">
+  </div> 
+  <div class="col-md-6"> 
+    <label for="end_date" class="form-label">Date de fin</label>
+    <input type="text" formControlName="end_date" class="form-control" id="end_date" placeholder="2023-06-19 15:15">
+  </div> 
+  <div class="col-12">
+    <label for="adress" class="form-label">Adresse</label>
+    <input type="text" class="form-control" formControlName="adress" id="adress" placeholder="Plazza Hotel, Kinshasa">
+  </div>
+  <div class="col-12">
+    <label for="adress" class="form-label">Image</label>
+    <div class="input-group">
+      <input formControlName="image" class="form-control" name="image">
+      <app-upload (uploadedUrl)="formGroup.patchValue({'image': $event})"></app-upload> 
+    </div>
+  </div>
+  <div class="col-12"> 
+    <ckeditor [editor]="Editor" formControlName="content" data="<p>Entrer le contenu !</p>"></ckeditor>
+  </div> 
+  <div class="col-12">
+    <button type="submit" class="btn btn-primary">Soumettre la modification</button>
+  </div>
+</form>

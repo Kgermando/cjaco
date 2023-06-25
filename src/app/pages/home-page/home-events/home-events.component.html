@@ -1,0 +1,31 @@
+<div class="courses-area pt-100 pb-75 bg-f6fafb">
+    <div class="container">
+        <div class="section-title text-center"> 
+            <h2 class="mb-0">Evenments à venir</h2>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-4 col-md-6 col-sm-6" *ngFor="let item of eventList; index as i">
+                <div *ngIf="i<3">
+                    <div class="single-event-box">
+                        <img [src]="item.image" alt="{{item.title}}">
+                        <div class="content">
+                            <ul class="info ps-0 list-unstyled">
+                                <li class="d-inline-block position-relative">
+                                    <i class="flaticon-calendar"></i>
+                                    <!-- {{ patient.created | date: 'dd/MM/yyyy HH:mm:ss' }} -->
+                                    {{ item.start_date | date: 'dd/MM/yyyy' }}
+                                </li>
+                                <li class="d-inline-block position-relative">
+                                    <i class="flaticon-pin"></i>
+                                    {{item.adress}}
+                                </li>
+                            </ul>
+                            <h3><a [routerLink]="['/events-detail', item.id, item.title]">{{item.title | slice:0:50}}</a></h3> 
+                        </div>
+                    </div>
+                </div>
+                
+            </div> 
+        </div>
+    </div>
+</div>

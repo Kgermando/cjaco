@@ -1,0 +1,74 @@
+<!-- Default About Us Section -->
+<div
+    class="about-area z-1 position-relative pt-100 pb-75"
+    [ngClass]="{'d-none': router.url === '/index-2' || router.url === '/index-3'}"
+>
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 col-md-12">
+                <div class="about-image">
+                    <div class="row align-items-end">
+                        <div class="col-6">
+                            <div class="image">
+                                <img src="assets/images/about/about1.jpg" alt="about-image">
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="image">
+                                <img src="assets/images/about/about2.jpg" alt="about-image">
+                                <div class="video-image position-relative">
+                                    <button type="button" class="video-btn bg-transparent p-0 border-0" (click)="openPopup()">
+                                        <div class="icon">
+                                            <i class='bx bx-play' ></i>
+                                        </div>
+                                        Play Video
+                                    </button>
+                                    <img src="assets/images/about/about3.jpg" alt="about-image">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12">
+                <div class="about-content">
+                    <h2>Historique et reforme</h2>
+                    <p>
+                        Le Club des Jeunes Ambassadeurs du Kasaï-Oriental est né en 2011 à l’initiative
+                        des quelques jeunes réunis pour développer des stratégies de lutte contre la
+                        pandémie du SIDA en conscientisant la jeunesse sur son rôle pour sa propre
+                        protection et la protection de tout son environnement.
+                        Partis de cette idée, et dans le but d&#39;élargir son action et son implication dans la
+                        recherche de solutions aux problèmes de la société congolaise, le Club des Jeunes
+                        Ambassadeurs a été créé avec comme objectif général de soutenir l&#39;action du
+                        développement durable par le biais de la jeunesse.
+                        En 2021, 10 ans depuis que cette initiative a vu le jour, et ayant connu diverses
+                        expériences en interne comme en externe, le CJAKOR, a jugé opportun de revoir
+                        son positionnement, sa dénomination (pour soutenir sa portée nationale), sa
+                        stratégie, sa formation, et de revisiter ses objectifs.
+                        Avec un souffle de leadership transformationnel, la nouvelle vision suggère donc de
+                        comprendre la jeunesse au-delà d’un âge, mais comme un état d&#39;esprit, un
+                        dynamisme que chacun des membres doit maintenir dans la créativité et l’abnégation
+                        pour continuer de jouer son rôle dans le développement de la république.
+                    </p>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="shape1">
+        <img src="assets/images/shapes/shape1.png" alt="shape1">
+    </div>
+</div>
+
+<!-- Video Popup -->
+<div class="video-popup" *ngIf="isOpen">
+    <div class="popup-inner">
+        <iframe src="https://www.youtube.com/embed/XNQk1qt__Vw" title="Setup and Local Installation - React Nextjs Online Yoga Coaching &amp; Training Courses System" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <button (click)="closePopup()" type="button" class="close-btn">
+            <i class='bx bx-x'></i>
+        </button>
+    </div>
+</div>
+
+ 

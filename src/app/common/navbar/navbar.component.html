@@ -1,0 +1,78 @@
+
+<div class="navbar-area" [ngClass]="{'sticky': isSticky}">
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg" [class.active]="classApplied">
+            <a class="navbar-brand" routerLink="/">
+                <img src="assets/images/logo.png" alt="logo">
+            </a>
+            <button class="navbar-toggler" type="button" (click)="toggleClass()">
+                <span class="burger-menu">
+                    <span class="top-bar"></span>
+                    <span class="middle-bar"></span>
+                    <span class="bottom-bar"></span>
+                </span>
+            </button>
+            <div class="collapse navbar-collapse"> 
+                <ul class="navbar-nav"> 
+                    <li class="nav-item">
+                        <a routerLink="/home" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                            Accueil
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a routerLink="/about" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                            A Propos de Nous
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a routerLink="/events" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                            Evenements
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a routerLink="/activity" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                            Activités
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a routerLink="/contact" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                            Contacts
+                        </a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav for-responsive">
+                    <li class="nav-item">
+                        <a routerLink="/home" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="toggleClass()">
+                            Accueil
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a routerLink="/about" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="toggleClass()">
+                            A Propos de Nous
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a routerLink="/events" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="toggleClass()">
+                            Evenements
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a routerLink="/activity" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="toggleClass()">
+                            Activités
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a routerLink="/contact" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="toggleClass()">
+                            Contacts
+                        </a>
+                    </li>
+                </ul>
+                <div class="others-option d-flex align-items-center">
+                    <div class="option-item">
+                        <a routerLink="/soutenir" class="default-btn two">Nous soutenir</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+</div> 
