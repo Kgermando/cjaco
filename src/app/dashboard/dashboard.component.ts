@@ -76,7 +76,7 @@ export class DashboardComponent implements OnInit {
     });
     this.eventService.allData().subscribe(event => {
       this.eventList = event;
-      this.totalSoutiens = this.eventList.length; 
+      this.totalEvenements = this.eventList.length; 
     });
     this.newsletterService.allData().subscribe(newsletter => {
       this.newsletterList = newsletter;
