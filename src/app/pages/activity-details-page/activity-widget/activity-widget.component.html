@@ -1,0 +1,20 @@
+<aside class="widget-area"> 
+    <div class="widget widget_toledo_posts_thumb">
+        <h3 class="widget-title"><span>Recentes activités</span></h3>
+        <div class="spinner-border" role="status" *ngIf="loading">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+        <div *ngIf="!loading">
+            <article class="item" *ngFor="let item of activityList; index as i">
+            
+                <a [routerLink]="['/activity-detail', item.id, item.title]" class="thumb">
+                        <img [src]="item.image" alt="{{item.title}}">
+                    </a>
+                    <div class="info">
+                        <h4 class="title"><a [routerLink]="['/activity-detail', item.id, item.title]">{{item.title | slice:0:50}}</a></h4>
+                        {{ item.created | date: 'dd/MM/yyyy' }}
+                    </div>  
+            </article>
+        </div> 
+    </div> 
+</aside> 

@@ -1,0 +1,61 @@
+<!-- Page Banner -->
+<div
+    class="page-banner-area ptb-100"
+    style="background-image: url(assets/images/shapes/page-banner-bg.jpg);"
+>
+    <div class="container">
+        <div class="page-banner-content text-center">
+            <h1>Profile de l'animateur</h1>
+            <ul class="ps-0 mb-0 list-unstyled">
+                <li class="d-inline-block position-relative"><a routerLink="/">Acceuil</a></li>
+                <li class="d-inline-block position-relative">Profile de l'animateur</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- Instructor Profile -->
+<div class="spinner-border" role="status" *ngIf="isLoading">
+    <span class="visually-hidden">Loading...</span>
+</div>
+<div class="instructor-profile-area pt-100" *ngIf="!isLoading">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-12">
+                <div class="instructor-profile-image text-center">
+                    <img src="assets/images/instructors/instructor1.jpg" alt="instructor-image">
+                    <ul class="social-links ps-0 mb-0 list-unstyled">
+                        <li class="d-inline-block">
+                            <a href="{{animateur.facebook}}" target="_blank" class="position-relative d-block rounded-circle text-center">
+                                <i class="bx bxl-facebook"></i>
+                            </a>
+                        </li>
+                        <li class="d-inline-block">
+                            <a href="{{animateur.linkedin}}" target="_blank" class="position-relative d-block rounded-circle text-center">
+                                <i class="bx bxl-linkedin"></i>
+                            </a>
+                        </li>
+                        <li class="d-inline-block">
+                            <a href="{{animateur.twitter}}" target="_blank" class="position-relative d-block rounded-circle text-center">
+                                <i class="bx bxl-twitter"></i>
+                            </a>
+                        </li>
+                        <li class="d-inline-block">
+                            <a href="{{animateur.instagram}}" target="_blank" class="position-relative d-block rounded-circle text-center">
+                                <i class='bx bxl-instagram'></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-8 col-md-12">
+                <div class="instructor-profile-desc"> 
+                    <h3>{{ animateur.fullname }}</h3>
+                    <span class="designation d-block">{{ animateur.title }}</span> 
+
+                    <div [innerHTML]="animateur.content"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

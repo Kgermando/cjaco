@@ -25,6 +25,11 @@
                         </a>
                     </li>
                     <li class="nav-item">
+                        <a routerLink="/animateurs" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                            Animateurs
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a routerLink="/events" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                             Evenements
                         </a>
@@ -49,6 +54,11 @@
                     <li class="nav-item">
                         <a routerLink="/about" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="toggleClass()">
                             A Propos de Nous
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a routerLink="/animateurs" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="toggleClass()">
+                            Animateurs
                         </a>
                     </li>
                     <li class="nav-item">

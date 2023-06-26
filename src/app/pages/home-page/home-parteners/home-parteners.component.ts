@@ -1,36 +1,35 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Partner } from 'src/app/models/partner-model';
+import { PartnerService } from 'src/app/services/partner.service';
 
 @Component({
   selector: 'app-home-parteners',
   templateUrl: './home-parteners.component.html',
   styleUrls: ['./home-parteners.component.scss']
 })
-export class HomePartenersComponent {
-  constructor(
-    public router: Router
-) { }
+export class HomePartenersComponent implements OnInit {
 
-partnerContent = [ 
-    {
-        title: `Our Global Honorable Partners`,
-        list: [
-            {
-                img: `assets/images/partners/partner1.png`
-            },
-            {
-                img: `assets/images/partners/partner2.png`
-            },
-            {
-                img: `assets/images/partners/partner3.png`
-            },
-            {
-                img: `assets/images/partners/partner4.png`
-            },
-            {
-                img: `assets/images/partners/partner5.png`
-            }
-        ]
+    partnerList: Partner[] = [];
+
+    lastPage: number | any; 
+
+  constructor(
+    public router: Router,
+    private partnerService: PartnerService
+    ) { }
+
+
+    ngOnInit(): void {
+        this.load();
     }
-]
+    
+    load(page = 1) {
+        this.partnerService.all(page).subscribe(res => {
+            this.partnerList = res.data;
+            this.lastPage = res.meta.last_page;
+        }
+        );
+    } 
+
 }

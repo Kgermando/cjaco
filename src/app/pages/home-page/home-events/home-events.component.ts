@@ -14,8 +14,6 @@ export class HomeEventsComponent implements OnInit {
 
   lastPage: number | any; 
 
-  imageUrl: string | any;
-
   constructor(private eventService: EventsService) {}
  
   ngOnInit(): void {

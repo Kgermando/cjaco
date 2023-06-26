@@ -1,1 +1,72 @@
-<p>activity-details-page works!</p>
+<!-- Page Banner -->
+<div
+    class="page-banner-area ptb-100"
+    style="background-image: url(assets/images/shapes/page-banner-bg.jpg);"
+>
+    <div class="container">
+        <div class="page-banner-content text-center">
+            <h1>Details de l'activité</h1>
+            <ul class="ps-0 mb-0 list-unstyled">
+                <li class="d-inline-block position-relative"><a routerLink="/">Acceuil</a></li>
+                <li class="d-inline-block position-relative">Details de l'activité</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- Blog Details -->
+<div class="spinner-border" role="status" *ngIf="isLoading">
+    <span class="visually-hidden">Loading...</span>
+</div>
+<div class="blog-details-area ptb-100" *ngIf="!isLoading">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-12">
+                <div class="blog-details-desc">
+                    <div class="post-thumb">
+                        <img [src]="activity.image" alt="{{activity.title}}">
+                    </div>
+                    <h3>Eco-Education in Our Lives: We Can Change the Future</h3>
+                    <div class="post-meta">
+                        <ul class="ps-0 list-unstyled mb-0">
+                            <li class="d-inline-block position-relative">
+                                <i class='bx bx-user'></i>
+                                Par {{ activity.redaction }}
+                            </li>
+                            <li class="d-inline-block position-relative">
+                                <i class='bx bx-calendar'></i>
+                                {{ activity.created | date: 'dd/MM/yyyy' }}
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mb-3"></div>
+                    <div [innerHTML]="activity.content"></div>
+
+                    <div class="post-footer d-flex align-items-center flex-wrap">
+                        <div class="article-share text-md-end">
+                            <ul class="social ps-0 mb-0 mt-0 list-unstyled">
+                                <li class="d-inline-block mb-0"><span class="fw-medium position-relative d-inline-block">Partagez:</span></li>
+                                <li class="d-inline-block mb-0"><a href="#" class="facebook d-block rounded-circle text-center" target="_blank">
+                                    <i class='bx bxl-facebook'></i>
+                                </a></li>
+                                <li class="d-inline-block mb-0"><a href="#" class="twitter d-block rounded-circle text-center" target="_blank">
+                                    <i class='bx bxl-twitter'></i>
+                                </a></li>
+                                <li class="d-inline-block mb-0"><a href="#" class="linkedin d-block rounded-circle text-center" target="_blank">
+                                    <i class='bx bxl-linkedin'></i>
+                                </a></li>
+                                <li class="d-inline-block mb-0"><a href="#" class="instagram d-block rounded-circle text-center" target="_blank">
+                                    <i class='bx bxl-instagram'></i>
+                                </a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="col-lg-4 col-md-12">
+                <app-activity-widget></app-activity-widget>
+            </div>
+        </div>
+    </div>
+</div>

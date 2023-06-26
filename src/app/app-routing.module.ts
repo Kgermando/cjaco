@@ -10,9 +10,7 @@ import { ActivityDetailsPageComponent } from './pages/activity-details-page/acti
 import { SoutenirPageComponent } from './pages/soutenir-page/soutenir-page.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { NotFoundComponent } from './common/not-found/not-found.component'; 
-import { RegisterPageComponent } from './pages/auth/register-page/register-page.component';
-import { TeamPageComponent } from './pages/team-page/team-page.component';
-import { TeamDetailPageComponent } from './pages/team-detail-page/team-detail-page.component'; 
+import { RegisterPageComponent } from './pages/auth/register-page/register-page.component';  
 import { AdminActivityComponent } from './dashboard/admin-activity/admin-activity.component';
 import { AdminAnimateurComponent } from './dashboard/admin-animateur/admin-animateur.component';
 import { AdminContactComponent } from './dashboard/admin-contact/admin-contact.component';
@@ -44,6 +42,8 @@ import { UserAddComponent } from './dashboard/admin-user/user-add/user-add.compo
 import { UserEditComponent } from './dashboard/admin-user/user-edit/user-edit.component';
 import { NewsletterAddComponent } from './dashboard/admin-newsletter/newsletter-add/newsletter-add.component';
 import { NewsletterEditComponent } from './dashboard/admin-newsletter/newsletter-edit/newsletter-edit.component';
+import { AnimateurPageComponent } from './pages/animateur-page/animateur-page.component';
+import { AnimateurDetailPageComponent } from './pages/animateur-detail-page/animateur-detail-page.component';
 
 const routes: Routes = [
   { path: 'home', component: HomePageComponent },
@@ -52,10 +52,10 @@ const routes: Routes = [
   { path: 'events', component: EventsPageComponent },
   { path: 'events-detail/:id/:title', component: EventsDetailsPageComponent },
   { path: 'activity', component: ActivityPageComponent },
-  { path: 'activity/:title', component: ActivityDetailsPageComponent },
+  { path: 'activity-detail/:id/:title', component: ActivityDetailsPageComponent },
   { path: 'soutenir', component: SoutenirPageComponent },
-  { path: 'team', component: TeamPageComponent },
-  { path: 'team/:id', component: TeamDetailPageComponent},
+  { path: 'animateurs', component: AnimateurPageComponent },
+  { path: 'animateur-detail/:id/:fullname', component: AnimateurDetailPageComponent },
 
   { path: 'not-found', component: NotFoundComponent },
 

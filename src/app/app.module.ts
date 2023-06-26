@@ -20,9 +20,7 @@ import { EventsPageComponent } from './pages/events-page/events-page.component';
 import { EventsDetailsPageComponent } from './pages/events-details-page/events-details-page.component';
 import { ActivityDetailsPageComponent } from './pages/activity-details-page/activity-details-page.component';
 import { ActivityPageComponent } from './pages/activity-page/activity-page.component';
-import { HomePageComponent } from './pages/home-page/home-page.component';
-import { TeamPageComponent } from './pages/team-page/team-page.component';
-import { TeamDetailPageComponent } from './pages/team-detail-page/team-detail-page.component'; 
+import { HomePageComponent } from './pages/home-page/home-page.component';  
 import { RegisterPageComponent } from './pages/auth/register-page/register-page.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HomeBannerComponent } from './pages/home-page/home-banner/home-banner.component';
@@ -83,6 +81,9 @@ import { ResetPasswordComponent } from './pages/auth/reset-password/reset-passwo
 import { ForgotPasswordComponent } from './pages/auth/forgot-password/forgot-password.component';
 import { LoginPageComponent } from './pages/auth/login-page/login-page.component';
 import { DatePipe } from '@angular/common';
+import { ActivityWidgetComponent } from './pages/activity-details-page/activity-widget/activity-widget.component'; 
+import { AnimateurPageComponent } from './pages/animateur-page/animateur-page.component';
+import { AnimateurDetailPageComponent } from './pages/animateur-detail-page/animateur-detail-page.component';
 
 
 
@@ -98,9 +99,7 @@ import { DatePipe } from '@angular/common';
     EventsDetailsPageComponent,
     ActivityDetailsPageComponent,
     ActivityPageComponent,
-    HomePageComponent,
-    TeamPageComponent,
-    TeamDetailPageComponent,
+    HomePageComponent,  
     LoginPageComponent,
     RegisterPageComponent,
     DashboardComponent,
@@ -146,7 +145,9 @@ import { DatePipe } from '@angular/common';
     AnimateurAddComponent,
     AnimateurEditComponent, 
     ResetPasswordComponent,
-    ForgotPasswordComponent, 
+    ForgotPasswordComponent,
+    ActivityWidgetComponent, 
+    AnimateurPageComponent, AnimateurDetailPageComponent, 
   ],
   imports: [
     BrowserModule,
