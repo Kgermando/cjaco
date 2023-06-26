@@ -20,7 +20,7 @@
       <input type="text" class="form-control" formControlName="adress" id="adress" placeholder="Plazza Hotel, Kinshasa">
     </div>
     <div class="col-12">
-      <label for="adress" class="form-label">Image</label>
+      <label for="image" class="form-label">Image</label>
       <div class="input-group">
         <input formControlName="image" class="form-control" name="image">
         <app-upload (uploadedUrl)="formGroup.patchValue({'image': $event})"></app-upload> 

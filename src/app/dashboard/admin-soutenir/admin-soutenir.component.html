@@ -1,1 +1,54 @@
-<p>admin-soutenir works!</p>
+<div class="courses-table">
+    <div class="mb-4 d-flex align-items-center justify-content-between">
+        <span>Nous soutenir</span>
+        <button class="default-btn two" type="button" routerLink="/admin/soutenir-add">Ajouter</button>
+    </div>
+    <div class="table-responsive">
+        <table class="table align-middle">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th scope="col">Full Name</th>
+                    <th scope="col">Montant</th>
+                    <th scope="col">Type paiement</th>
+                    <th scope="col">Signature</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead> 
+             <div class="spinner-border" role="status" *ngIf="isloading">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            <tbody *ngIf="!isloading"> 
+                <tr *ngFor="let item of soutenirList">
+                    <td>
+                        {{ item.id }}
+                    </td>
+                    <th scope="row">
+                        <a [routerLink]="['/admin', item.id, 'soutenir-edit']">
+                            {{ item.fullname }}
+                        </a>
+                    </th>
+                    <td>
+                        {{ item.montant }}
+                    </td>
+                    <td>
+                        {{ item.type_paiement }}
+                    </td>
+                    <td>
+                        {{ item.signature }}
+                    </td>
+                    <td class="action">
+                        <button type="button" (click)="delete(item.id)" class="default-btn">
+                            <i class='bx bx-trash-alt'></i>
+                        </button>
+                    </td>
+                </tr>
+                
+            </tbody>
+        </table>
+    </div> 
+    <app-paginator
+    [lastPage]="lastPage"
+    (pageChanged)="load($event)"
+    ></app-paginator>
+</div>

@@ -1,1 +1,28 @@
-<p>testimonial-edit works!</p>
+
+<div class="row">
+    <h4>modification du testimonial</h4>
+</div>
+<form [formGroup]="formGroup" (ngSubmit)="onSubmit()" class="row g-3">
+    <div class="col-12">
+      <label for="fullname" class="form-label">Full Name</label>
+      <input type="text" class="form-control" formControlName="fullname" id="fullname" placeholder="Nom complet">
+    </div>
+    <div class="col-md-6"> 
+      <label for="title" class="form-label">Titre</label>
+      <input type="text" formControlName="title" class="form-control" id="title" placeholder="Secretaire general">
+    </div>
+    <div class="col-12">
+      <label for="comment" class="form-label">Commentaire</label>
+      <input type="text" class="form-control" formControlName="comment" id="comment" placeholder="Dites quelque chose ...">
+    </div>
+    <div class="col-12">
+      <label for="image" class="form-label">Image</label>
+      <div class="input-group">
+        <input formControlName="image" class="form-control" name="image">
+        <app-upload (uploadedUrl)="formGroup.patchValue({'image': $event})"></app-upload> 
+      </div>
+    </div> 
+    <div class="col-12">
+      <button type="submit" class="btn btn-primary">Soumettre</button>
+    </div>
+  </form>

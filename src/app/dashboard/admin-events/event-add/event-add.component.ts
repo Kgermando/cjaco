@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router'; 
 import { EventsService } from 'src/app/services/events.service'; 
@@ -10,7 +10,7 @@ import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
   templateUrl: './event-add.component.html',
   styleUrls: ['./event-add.component.scss']
 })
-export class EventAddComponent {
+export class EventAddComponent implements OnInit {
   isLoading: boolean = false; 
   formGroup: FormGroup | any;
 
@@ -40,7 +40,7 @@ export class EventAddComponent {
       start_date: ['', Validators.required],
       end_date: ['', Validators.required],
       adress: ['', Validators.required],
-      image: [''],
+      image: ['', Validators.required],
       content: ['', Validators.required]
     }); 
   } 

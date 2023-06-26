@@ -1,1 +1,25 @@
-<p>soutenir-add works!</p>
+
+<div class="row">
+    <h4>Ajout soutenir</h4>
+</div>
+<form [formGroup]="formGroup" (ngSubmit)="onSubmit()" class="row g-3">
+  <div class="col-12">
+    <label for="fullname" class="form-label">Full Name</label>
+    <input type="text" class="form-control" formControlName="fullname" id="fullname" placeholder="Nom complet">
+  </div>
+  <div class="col-md-6"> 
+    <label for="objet" class="form-label">Objet</label>
+    <input type="text" formControlName="objet" class="form-control" id="objet" placeholder="Objet du soutien">
+  </div> 
+  <div class="col-md-6"> 
+    <label for="montant" class="form-label">Montant</label>
+    <input type="text" formControlName="montant" class="form-control" id="montant" placeholder="montant">
+  </div> 
+  <div class="col-12">
+    <label for="type_paiement" class="form-label">Type de paiement</label>
+    <input type="text" class="form-control" formControlName="type_paiement" id="type_paiement" placeholder="m-pesa, carte visa, virement">
+  </div>
+  <div class="col-12">
+    <button type="submit" class="btn btn-primary">Soumettre</button>
+  </div>
+</form>

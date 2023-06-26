@@ -1,1 +1,29 @@
-<p>contact-edit works!</p>
+
+<div class="row">
+    <h4>Modification</h4>
+</div>
+<form [formGroup]="formGroup" (ngSubmit)="onSubmit()" class="row g-3">
+  <div class="col-12">
+    <label for="fullname" class="form-label">Full Name</label>
+    <input type="text" class="form-control" formControlName="fullname" id="fullname" placeholder="Nom complet">
+  </div>
+  <div class="col-md-6"> 
+    <label for="email" class="form-label">email</label>
+    <input type="text" formControlName="email" class="form-control" id="email" placeholder="email">
+  </div> 
+  <div class="col-md-6"> 
+    <label for="phone" class="form-label">Phone</label>
+    <input type="text" formControlName="phone" class="form-control" id="phone" placeholder="phone">
+  </div> 
+  <div class="col-12">
+    <label for="subject" class="form-label">Suject</label>
+    <input type="text" class="form-control" formControlName="subject" id="subject" placeholder="Suject">
+  </div>
+  <div class="col-12">
+    <label for="message" class="form-label">Message</label>
+    <input type="text" class="form-control" formControlName="message" id="message" placeholder="Votre message...">
+  </div>
+  <div class="col-12">
+    <button type="submit" class="btn btn-primary">Soumettre</button>
+  </div>
+</form>

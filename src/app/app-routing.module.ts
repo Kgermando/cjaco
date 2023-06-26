@@ -28,6 +28,22 @@ import { ForgotPasswordComponent } from './pages/auth/forgot-password/forgot-pas
 import { ResetPasswordComponent } from './pages/auth/reset-password/reset-password.component';
 import { authGuard } from './guard/auth.guard';
 import { LoginPageComponent } from './pages/auth/login-page/login-page.component';
+import { ActivityAddComponent } from './dashboard/admin-activity/activity-add/activity-add.component';
+import { ActivityEditComponent } from './dashboard/admin-activity/activity-edit/activity-edit.component';
+import { AnimateurAddComponent } from './dashboard/admin-animateur/animateur-add/animateur-add.component';
+import { AnimateurEditComponent } from './dashboard/admin-animateur/animateur-edit/animateur-edit.component';
+import { ContactAddComponent } from './dashboard/admin-contact/contact-add/contact-add.component';
+import { ContactEditComponent } from './dashboard/admin-contact/contact-edit/contact-edit.component';
+import { PartenaireAddComponent } from './dashboard/admin-partenaire/partenaire-add/partenaire-add.component';
+import { PartenaireEditComponent } from './dashboard/admin-partenaire/partenaire-edit/partenaire-edit.component';
+import { SoutenirEditComponent } from './dashboard/admin-soutenir/soutenir-edit/soutenir-edit.component';
+import { SoutenirAddComponent } from './dashboard/admin-soutenir/soutenir-add/soutenir-add.component';
+import { TestimonialAddComponent } from './dashboard/admin-testimonial/testimonial-add/testimonial-add.component';
+import { TestimonialEditComponent } from './dashboard/admin-testimonial/testimonial-edit/testimonial-edit.component';
+import { UserAddComponent } from './dashboard/admin-user/user-add/user-add.component';
+import { UserEditComponent } from './dashboard/admin-user/user-edit/user-edit.component';
+import { NewsletterAddComponent } from './dashboard/admin-newsletter/newsletter-add/newsletter-add.component';
+import { NewsletterEditComponent } from './dashboard/admin-newsletter/newsletter-edit/newsletter-edit.component';
 
 const routes: Routes = [
   { path: 'home', component: HomePageComponent },
@@ -49,16 +65,42 @@ const routes: Routes = [
   { path: 'reset-password', component: ResetPasswordComponent },
   { path: 'admin', component: DashboardComponent, children: [
       { path: 'admin-activity', component: AdminActivityComponent },
+      { path: 'activity-add', component: ActivityAddComponent },
+      { path: ':id/activity-edit', component: ActivityEditComponent }, 
+
       { path: 'admin-animateur', component: AdminAnimateurComponent },
+      { path: 'animateur-add', component: AnimateurAddComponent },
+      { path: ':id/animateur-edit', component: AnimateurEditComponent }, 
+
       { path: 'admin-contact', component: AdminContactComponent },
+      { path: 'contact-add', component: ContactAddComponent },
+      { path: ':id/contact-edit', component: ContactEditComponent }, 
+
       { path: 'admin-events', component: AdminEventsComponent }, 
       { path: 'events-add', component: EventAddComponent },
       { path: ':id/events-edit', component: EventEditComponent },
+
       { path: 'admin-partners', component: AdminPartenaireComponent },
+      { path: 'partner-add', component: PartenaireAddComponent },
+      { path: ':id/partner-edit', component: PartenaireEditComponent }, 
+
       { path: 'admin-soutenir', component: AdminSoutenirComponent },
+      { path: 'soutenir-add', component: SoutenirAddComponent },
+      { path: ':id/soutenir-edit', component: SoutenirEditComponent }, 
+
       { path: 'admin-testimonials', component: AdminTestimonialComponent },
+      { path: 'testimonials-add', component: TestimonialAddComponent },
+      { path: ':id/testimonials-edit', component: TestimonialEditComponent }, 
+
       { path: 'admin-users', component: AdminUserComponent },
+      { path: 'user-add', component: UserAddComponent },
+      { path: ':id/user-edit', component: UserEditComponent }, 
+
       { path: 'admin-newsletter', component: AdminNewsletterComponent },
+      { path: 'newsletter-add', component: NewsletterAddComponent },
+      { path: ':id/newsletter-edit', component: NewsletterEditComponent },
+
+
     ],
     // canActivate: [authGuard]
   },

@@ -1,1 +1,44 @@
-<p>animateur-add works!</p>
+
+<div class="row">
+    <h4>Ajout d'un animateur</h4>
+</div>
+<form [formGroup]="formGroup" (ngSubmit)="onSubmit()" class="row g-3">
+  <div class="col-12">
+    <label for="fullname" class="form-label">Full name</label>
+    <input type="text" class="form-control" formControlName="title" id="fullname" placeholder="Nom Complet">
+  </div>
+  <div class="col-md-6"> 
+    <label for="title" class="form-label">Titre</label>
+    <input type="text" formControlName="title" class="form-control" id="title" placeholder="Titre">
+  </div> 
+  <div class="col-12">
+    <label for="image" class="form-label">Image</label>
+    <div class="input-group">
+      <input formControlName="image" class="form-control" name="image">
+      <app-upload (uploadedUrl)="formGroup.patchValue({'image': $event})"></app-upload> 
+    </div>
+  </div> 
+  <div class="col-12">
+    <label for="content" class="form-label">Contenu</label>
+    <input type="text" class="form-control" formControlName="content" id="content" placeholder="Contenu...">
+  </div> 
+  <div class="col-12">
+    <label for="facebook" class="form-label">Facebook</label>
+    <input type="text" class="form-control" formControlName="facebook" id="facebook" placeholder="Lien facebook">
+  </div> 
+  <div class="col-12">
+    <label for="linkedin" class="form-label">Linkedin</label>
+    <input type="text" class="form-control" formControlName="linkedin" id="linkedin" placeholder="Lien linkedin">
+  </div> 
+  <div class="col-12">
+    <label for="twitter" class="form-label">Twitter</label>
+    <input type="text" class="form-control" formControlName="twitter" id="twitter" placeholder="Lien twitter">
+  </div> 
+  <div class="col-12">
+    <label for="instagram" class="form-label">Instagram</label>
+    <input type="text" class="form-control" formControlName="instagram" id="instagram" placeholder="Lien instagram">
+  </div> 
+  <div class="col-12">
+    <button type="submit" class="btn btn-primary">Soumettre</button>
+  </div>
+</form>

@@ -1,1 +1,13 @@
-<p>newsletter-edit works!</p>
+
+<div class="row">
+    <h4>Modification de l'dresse mail</h4>
+</div>
+<form [formGroup]="formGroup" (ngSubmit)="onSubmit()" class="row g-3">
+  <div class="col-12">
+    <label for="email" class="form-label">Email</label>
+    <input type="text" class="form-control" formControlName="email" id="email" placeholder="Adresse email">
+  </div>  
+  <div class="col-12">
+    <button type="submit" class="btn btn-primary">Soumettre</button>
+  </div>
+</form>

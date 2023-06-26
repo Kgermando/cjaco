@@ -1,1 +1,20 @@
-<p>partenaire-edit works!</p>
+
+<div class="row">
+    <h4>Modification du partenaire</h4>
+</div>
+<form [formGroup]="formGroup" (ngSubmit)="onSubmit()" class="row g-3">
+  <div class="col-12">
+    <label for="title" class="form-label">Titre</label>
+    <input type="text" class="form-control" formControlName="title" id="title" placeholder="Titre">
+  </div> 
+  <div class="col-12">
+    <label for="adress" class="form-label">Image</label>
+    <div class="input-group">
+      <input formControlName="image" class="form-control" name="image">
+      <app-upload (uploadedUrl)="formGroup.patchValue({'image': $event})"></app-upload> 
+    </div>
+  </div> 
+  <div class="col-12">
+    <button type="submit" class="btn btn-primary">Soumettre</button>
+  </div>
+</form>

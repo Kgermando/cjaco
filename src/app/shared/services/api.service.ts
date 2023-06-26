@@ -18,6 +18,10 @@ export abstract class ApiService {
     return this.http.get(url);
   }
 
+  allData(): Observable<any> {
+    return this.http.get(`${this.endpoint}/all`);
+  }
+
   get(id: number): Observable<any> {
     return this.http.get(`${this.endpoint}/${id}`);
   }

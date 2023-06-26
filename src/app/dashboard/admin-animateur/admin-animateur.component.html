@@ -1,1 +1,46 @@
-<p>admin-animateur works!</p>
+<div class="courses-table">
+    <div class="mb-4 d-flex align-items-center justify-content-between">
+        <span>Animateurs</span>
+        <button class="default-btn two" type="button" routerLink="/admin/animateur-add">Ajouter</button>
+    </div>
+    <div class="table-responsive">
+        <table class="table align-middle">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th scope="col">Titre</th> 
+                    <th scope="col">Signature</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead> 
+             <div class="spinner-border" role="status" *ngIf="isloading">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            <tbody *ngIf="!isloading"> 
+                <tr *ngFor="let item of animateurList">
+                    <td>
+                        {{ item.id }}
+                    </td>
+                    <th scope="row">
+                        <a [routerLink]="['/admin', item.id, 'animateur-edit']">
+                            {{ item.title }}
+                        </a> 
+                    </th> 
+                    <td>
+                        {{ item.signature }}
+                    </td>
+                    <td class="action">
+                        <button type="button" (click)="delete(item.id)" class="default-btn">
+                            <i class='bx bx-trash-alt'></i>
+                        </button>
+                    </td>
+                </tr>
+                
+            </tbody>
+        </table>
+    </div> 
+    <app-paginator
+    [lastPage]="lastPage"
+    (pageChanged)="load($event)"
+    ></app-paginator>
+</div>

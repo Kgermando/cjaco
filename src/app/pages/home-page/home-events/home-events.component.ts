@@ -20,8 +20,6 @@ export class HomeEventsComponent implements OnInit {
  
   ngOnInit(): void {
     this.load();
-    this.imageUrl = 'https://cjaco-spaces.fra1.digitaloceanspaces.com/75fea91a05507d241ecb4b5833e1b42c.jpg';
- 
   }
   
   load(page = 1) {

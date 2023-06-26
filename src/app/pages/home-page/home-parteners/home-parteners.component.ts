@@ -11,7 +11,7 @@ export class HomePartenersComponent {
     public router: Router
 ) { }
 
-partnerContent = [
+partnerContent = [ 
     {
         title: `Our Global Honorable Partners`,
         list: [

@@ -1,1 +1,21 @@
-<p>user-edit works!</p>
+
+<div class="row">
+    <h4>Modification de l'utilisateur</h4>
+</div>
+<form [formGroup]="formGroup" (ngSubmit)="onSubmit()" class="row g-3">
+    <div class="col-12">
+      <label for="fullname" class="form-label">Full Name</label>
+      <input type="text" class="form-control" formControlName="fullname" id="fullname" placeholder="Nom complet">
+    </div>
+    <div class="col-md-6"> 
+      <label for="email" class="form-label">Email</label>
+      <input type="text" formControlName="email" class="form-control" id="email" placeholder="email">
+    </div> 
+    <div class="col-md-6"> 
+      <label for="telephone" class="form-label">Telephone</label>
+      <input type="text" formControlName="telephone" class="form-control" id="telephone" placeholder="telephone">
+    </div>  
+    <div class="col-12">
+      <button type="submit" class="btn btn-primary">Soumettre</button>
+    </div>
+  </form>

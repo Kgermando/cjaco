@@ -1,1 +1,50 @@
-<p>admin-testimonial works!</p>
+<div class="courses-table">
+    <div class="mb-4 d-flex align-items-center justify-content-between">
+        <span>Testimonial</span>
+        <button class="default-btn two" type="button" routerLink="/admin/testimonial-add">Ajouter</button>
+    </div>
+    <div class="table-responsive">
+        <table class="table align-middle">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th scope="col">Full Name</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Signature</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead> 
+             <div class="spinner-border" role="status" *ngIf="isloading">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            <tbody *ngIf="!isloading"> 
+                <tr *ngFor="let item of testimonailList">
+                    <td>
+                        {{ item.id }}
+                    </td>
+                    <th scope="row">
+                        <a [routerLink]="['/admin', item.id, 'testimonial-edit']">
+                            {{ item.fullname }}
+                        </a>
+                    </th>
+                    <td>
+                        {{ item.title }}
+                    </td> 
+                    <td>
+                        {{ item.signature }}
+                    </td>
+                    <td class="action">
+                        <button type="button" (click)="delete(item.id)" class="default-btn">
+                            <i class='bx bx-trash-alt'></i>
+                        </button>
+                    </td>
+                </tr>
+                
+            </tbody>
+        </table>
+    </div> 
+    <app-paginator
+    [lastPage]="lastPage"
+    (pageChanged)="load($event)"
+    ></app-paginator>
+</div>
